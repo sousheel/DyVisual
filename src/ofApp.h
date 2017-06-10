@@ -4,10 +4,23 @@
 #include "ofxAubio.h"
 #include "ofxGui.h"
 
-class ofApp : public ofBaseApp{
+#include "ofxAppUtils.h"
+
+#ifdef HAVE_OFX_GUI
+    #include "ofxGui.h"
+    #include "ofxTransformPanel.h"
+#endif
+
+// we only specify a pointer to the Particle Scene here, so tell the compiler
+// that it exists as a class and we can include the class header in ofApp.cpp
+class ParticleScene;
+
+class ofApp : public ofxApp{
 
 	public:
-		void setup();
+		ofApp() {}
+    
+        void setup();
 		void update();
 		void draw();
 
@@ -41,7 +54,34 @@ class ofApp : public ofBaseApp{
     
         //Graphics stuff
         string currentGraphic;
-        vector<ofPoint> points;
+        int windowHeight;
+        int windowWidth;
+    
+        //Triangle Graphic
+        ofPoint triVertex1;
+        ofPoint triVertex2;
+        ofPoint triVertex3;
+        int initTriHeight;
+        vector<ofPoint> triPoints;
+    
+        //Random Points
+        vector<ofPoint> randPoints;
+    
+    
+        //Scene Management
+        // rendering transformer
+        ofxTransformer transformer;
+    
+        // handles the scenes
+        ofxSceneManager sceneManager;
+        int lastScene;
+    
+        // keep a pointer to the Particle Scene, so we can modify it more easily
+        ParticleScene *particleScene;
+    
+        #ifdef HAVE_OFX_GUI
+            ofxTransformPanel panel;
+        #endif
     
     private:
         //Aubio

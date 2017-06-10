@@ -1,2 +1,3 @@
+ofxAppUtils
 ofxAubio
 ofxGui
