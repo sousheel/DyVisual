@@ -102,6 +102,11 @@
 		966750FE1EEBEEE2002F6916 /* aubio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = aubio.framework; sourceTree = "<group>"; };
 		966751001EEBEFBA002F6916 /* TriangleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriangleScene.h; sourceTree = "<group>"; };
 		966751011EEBF004002F6916 /* RandomPointScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomPointScene.h; sourceTree = "<group>"; };
+		966751031EEEC852002F6916 /* FlyingLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlyingLine.h; sourceTree = "<group>"; };
+		966751041EEEC8A0002F6916 /* ShootingSquares.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShootingSquares.h; sourceTree = "<group>"; };
+		966751051EEEC8B6002F6916 /* FlashingText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashingText.h; sourceTree = "<group>"; };
+		966751061EEEC8D1002F6916 /* Giffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Giffer.h; sourceTree = "<group>"; };
+		966751071EEEC8E0002F6916 /* Imager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Imager.h; sourceTree = "<group>"; };
 		9D2C29B96659EBB7A0C5672F /* ofxAubioPitch.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxAubioPitch.h; path = ../../../addons/ofxAubio/src/ofxAubioPitch.h; sourceTree = SOURCE_ROOT; };
 		A96B8F6D2ECF14F9304EBD6C /* ofxAubioBeat.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxAubioBeat.cpp; path = ../../../addons/ofxAubio/src/ofxAubioBeat.cpp; sourceTree = SOURCE_ROOT; };
 		AD4ED35C34C7716523E3F68E /* ofxApp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxApp.h; path = ../../../addons/ofxAppUtils/src/ofxApp.h; sourceTree = SOURCE_ROOT; };
@@ -224,6 +229,11 @@
 				966750FB1EEBECDC002F6916 /* scenes.h */,
 				966751001EEBEFBA002F6916 /* TriangleScene.h */,
 				966751011EEBF004002F6916 /* RandomPointScene.h */,
+				966751031EEEC852002F6916 /* FlyingLine.h */,
+				966751041EEEC8A0002F6916 /* ShootingSquares.h */,
+				966751051EEEC8B6002F6916 /* FlashingText.h */,
+				966751061EEEC8D1002F6916 /* Giffer.h */,
+				966751071EEEC8E0002F6916 /* Imager.h */,
 			);
 			path = scenes;
 			sourceTree = "<group>";

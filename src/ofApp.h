@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxAubio.h"
 #include "ofxGui.h"
+#include "scenes/scenes.h"
 
 #include "ofxAppUtils.h"
 
@@ -35,6 +36,7 @@ class ofApp : public ofxApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+//        void windowResized(int w, int h);
     
         ofSoundStream soundStream;
         void audioIn(float * input, int bufferSize, int nChannels);
@@ -78,6 +80,8 @@ class ofApp : public ofxApp{
     
         // keep a pointer to the Particle Scene, so we can modify it more easily
         ParticleScene *particleScene;
+        TriangleScene *triangleScene;
+        RandomPointScene *randomPointScene;
     
         #ifdef HAVE_OFX_GUI
             ofxTransformPanel panel;

@@ -15,8 +15,11 @@ class TriangleScene : public ofxFadeScene {
     
 public:
     
+    //General
     int windowHeight;
     int windowWidth;
+    ofxApp *app;
+    bool gotBeat;
     
     //Triangle Graphic
     ofPoint triVertex1;
@@ -33,14 +36,20 @@ public:
     
     // scene setup
     void setup() {
-        //    //Triangle Graphic
-        //    windowWidth = ofGetWindowWidth();
-        //    windowHeight = ofGetWindowHeight();
-        //    initTriHeight = windowHeight/3;
-        //    triVertex1.set(ofGetWindowWidth()/3, 2*(ofGetWindowWidth()/3), 0);
-        //    triVertex2.set(2*(ofGetWindowWidth()/3), 2*(ofGetWindowWidth()/3), 0);
-        //    triVertex3.set(ofGetWindowWidth()/2, initTriHeight, 0);
-        //    srand(time(NULL));
+        //General
+        app =ofxGetAppPtr();
+        windowWidth = app->getRenderWidth();
+        windowHeight = app->getRenderHeight();
+        
+        //sound
+        gotBeat = true;
+        
+        //Triangle Graphic
+        initTriHeight = windowHeight/3;
+        triVertex1.set(windowWidth/3, 2*(windowWidth/3), 0);
+        triVertex2.set(2*(windowWidth/3), 2*(windowWidth/3), 0);
+        triVertex3.set(windowWidth/2, initTriHeight, 0);
+//      srand(time(NULL));
     }
     
     // called when scene is entering, this is just a demo and this
@@ -63,7 +72,8 @@ public:
     
     // normal update
     void update() {
-        
+        //General
+        app = ofxGetAppPtr();
     }
     
     // called when scene is exiting, this is just a demo and this
@@ -88,38 +98,38 @@ public:
     void draw() {
         ofEnableAlphaBlending();
         ofSetColor(255, 255, 255, 255*alpha);
-        //    if (gotBeat) {
-        //        ofDrawBitmapString("WAbAM", 0, 0);
-        //        gotBeat = false;
-        //
-        //        //Triangle Graphic
-        //        ofPoint newVertex(ofGetWindowWidth()/2, ofGetWindowWidth()/3);
-        //        triPoints.push_back(newVertex);
-        //     }
+            if (gotBeat) {
+                ofDrawBitmapString("WAbAM", 0, 0);
+                gotBeat = false;
         
-        //    //Triangle Graphic
-        //    //Make a struct for triangledata
-        //    triVertex1.set(ofGetWindowWidth()/3, 2*(ofGetWindowWidth()/3));
-        //    triVertex2.set(2*(ofGetWindowWidth()/3), 2*(ofGetWindowWidth()/3));
-        //    triVertex3.set(ofGetWindowWidth()/2, initTriHeight);
-        //    ofSetColor(255, 0, 0);
-        //    ofFill();
-        //    ofSetLineWidth(1);
-        //    ofDrawTriangle(triVertex1, triVertex2, triVertex3);
-        //
-        //    for (int i=0; i<triPoints.size(); i++){
-        //        triPoints[i].set(windowWidth/2, triPoints[i].y + 3);
-        //        if (triPoints[i].y >= windowHeight){
-        //            triPoints.erase(triPoints.begin() + i);//remove point
-        //        }
-        //        else{
-        //            int red = rand()%255; //use ofRandom instead
-        //            int green = rand()%255;
-        //            int blue = rand()%255;
-        //            ofSetColor(red, green, blue);
-        //            ofDrawTriangle(triPoints[i], triVertex1, triVertex2);
-        //        }
-        //    }
+                //Triangle Graphic
+                ofPoint newVertex(windowWidth/2, windowWidth/3);
+                triPoints.push_back(newVertex);
+             }
+        
+            //Triangle Graphic
+            //Make a struct for triangledata
+            triVertex1.set(windowWidth/3, 2*(windowWidth/3));
+            triVertex2.set(2*(windowWidth/3), 2*(windowWidth/3));
+            triVertex3.set(windowWidth/2, initTriHeight);
+//            ofSetColor(255, 0, 0);
+            ofFill();
+            ofSetLineWidth(1);
+            ofDrawTriangle(triVertex1, triVertex2, triVertex3);
+        
+            for (int i=0; i<triPoints.size(); i++){
+                triPoints[i].set(windowWidth/2, triPoints[i].y + 3);
+                if (triPoints[i].y >= windowHeight){
+                    triPoints.erase(triPoints.begin() + i);//remove point
+                }
+                else{
+                    int red = rand()%255; //use ofRandom instead
+                    int green = rand()%255;
+                    int blue = rand()%255;
+                    ofSetColor(red, green, blue);
+                    ofDrawTriangle(triPoints[i], triVertex1, triVertex2);
+                }
+            }
         ofDisableAlphaBlending();
 
     }
